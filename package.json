@@ -1,6 +1,6 @@
 {
   "name": "apigeefy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bundle javascript code and use them in Apigee Edge javascript policies",
   "main": "index.js",
   "scripts": {
