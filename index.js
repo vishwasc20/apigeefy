@@ -1,7 +1,7 @@
 const browserify = require('browserify');
 const through = require('through2');
 
-function policify (mod) {
+function apigeefy (mod) {
   const replaceRegex = 'var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.apigeefy = f()'
   const policy = 'var g={};g.apigeefy=f();context.setVariable("bundle", g)'
 
@@ -23,4 +23,4 @@ function policify (mod) {
    }));
 }
 
-module.exports = policify;
+module.exports = apigeefy;
