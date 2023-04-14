@@ -22,7 +22,6 @@
   "bugs": {
     "url": "https://github.com/vishwasc20/apigeefy/issues"
   },
-  "homepage": "https://github.com/vishwasc20/apigeefy#readme",
   "dependencies": {
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.4",
