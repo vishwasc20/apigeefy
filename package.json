@@ -11,7 +11,7 @@
     "bundle:all": "./bin/apigeefy ./test/modules/graphql-parser.js | npx babel --plugins=@babel/plugin-transform-template-literals --no-babelrc | npx uglifyjs > graphql-bundle-min.js && npm run compile"
   },
   "bin": {
-    "apigeefy": "bin/apigeefy | npx babel --plugins=@babel/plugin-transform-template-literals --no-babelrc | npx uglifyjs"
+    "apigeefy": "bin/apigeefy"
   },
   "repository": {
     "type": "git",
