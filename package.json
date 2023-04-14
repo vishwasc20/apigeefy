@@ -1,0 +1,49 @@
+{
+  "name": "apigeefy",
+  "version": "1.0.0",
+  "description": "Bundle javascript code and use them in Apigee Edge javascript policies",
+  "main": "index.js",
+  "scripts": {
+    "bundle:standalone": "./bin/apigeefy ./test/modules/graphql.js > bundled-parser.js",
+    "bundle:transpile": "npx babel bundled-parser.js --out-file bundled-parser-transpile.js --plugins=@babel/plugin-transform-template-literals",
+    "bundle:minify": "npx uglifyjs bundled-parser-transpile.js > graphql-bundle-min.js",
+    "compile": "npx trireme ./graphql-bundle-min.js",
+    "bundle:all": "./bin/apigeefy ./test/modules/graphql-parser.js | npx babel --plugins=@babel/plugin-transform-template-literals --no-babelrc | npx uglifyjs > graphql-bundle-min.js && npm run compile"
+  },
+  "bin": {
+    "apigeefy": "bin/apigeefy | npx babel --plugins=@babel/plugin-transform-template-literals --no-babelrc | npx uglifyjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishwasc20/apigeefy.git"
+  },
+  "author": "Vishwas C and Dinesh S",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vishwasc20/apigeefy/issues"
+  },
+  "homepage": "https://github.com/vishwasc20/apigeefy/#readme",
+  "dependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/plugin-transform-template-literals": "^7.18.9",
+    "browserify": "^17.0.0",
+    "graphql": "^15.8.0",
+    "through2": "^4.0.2",
+    "trireme": "^0.9.3",
+    "uglify-js": "^3.17.4"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "rhino",
+    "trireme",
+    "apigee",
+    "policies",
+    "npm",
+    "modules",
+    "browserify",
+    "apigeefy"
+  ]
+}

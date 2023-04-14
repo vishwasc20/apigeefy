@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+const apigeefy = require('../index.js');
+
+const file = process.argv[2];
+
+if (file) {
+    apigeefy(file)
+        .pipe(process.stdout);
+}
